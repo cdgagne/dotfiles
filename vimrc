@@ -26,6 +26,8 @@ set wildmenu
 set wildignore=*.pyc,*.o,*.bak,*.jpg,*.jpeg,*.png,*.gif
 set wildmode=list:full
 
+set colorcolumn=80
+
 " Better searching
 set incsearch ignorecase smartcase hlsearch
 
@@ -47,8 +49,31 @@ Bundle 'pangloss/vim-javascript'
 
 " Git-friendly statusline
 Bundle 'tpope/vim-fugitive'
+" Temporarily commented out while I try out syntastic
 set statusline=%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P\ %{fugitive#statusline()}%<
 set laststatus=2
+
+" Syntastic
+" Note: Requires pyflakes binary installed in $PATH
+Bundle 'scrooloose/syntastic'
+
+let g:syntastic_check_on_open=1
+
+" from https://github.com/spf13/spf13-vim/blob/master/.vimrc
+"if has('statusline')
+"  set laststatus=2
+"  " Broken down into easily includeable segments
+"  set statusline=%<%f\ " Filename
+"  set statusline+=%w%h%m%r " Options
+"  set statusline+=%{fugitive#statusline()} " Git Hotness
+"  set statusline+=\ [%{&ff}/%Y] " filetype
+"  set statusline+=\ [%{getcwd()}] " current dir
+"  set statusline+=%#warningmsg#
+"  set statusline+=%{SyntasticStatuslineFlag()}
+"  set statusline+=%*
+"  let g:syntastic_enable_signs=1
+"  "set statusline+=%=%-14.(%l,%c%V%)\ %p%% " Right aligned file nav info
+"endif
 
 " vim-scripts repos
 " Bundle 'L9'

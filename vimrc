@@ -13,11 +13,6 @@ set expandtab
 set textwidth=0
 let Tlist_Ctags_Cmd="/usr/bin/ctags"
 
-let g:solarized_style='dark'
-color solarized
-
-syn on
-
 set cino+==0
 
 set encoding=utf-8
@@ -25,8 +20,6 @@ set encoding=utf-8
 set wildmenu
 set wildignore=*.pyc,*.o,*.bak,*.jpg,*.jpeg,*.png,*.gif
 set wildmode=list:full
-
-set colorcolumn=80
 
 " Better searching
 set incsearch ignorecase smartcase hlsearch
@@ -40,6 +33,16 @@ call vundle#rc()
 
 " Let Vundle manage Vundle (required)
 Bundle 'gmarik/vundle'
+
+" Solarized colour scheme
+Bundle 'altercation/vim-colors-solarized.git'
+syntax enable
+if has('colorcolumn')
+  " Support for colorcolumn only in vim >= 7.3
+  set colorcolumn=80
+endif
+set background=dark
+colorscheme solarized
 
 " Github repos
 Bundle 'kien/ctrlp.vim'

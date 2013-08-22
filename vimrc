@@ -1,5 +1,5 @@
 " cdgagne/dotfiles/vimrc
-set guifont=Liberation\ Mono\ 10
+set guifont=Liberation\ Mono\ for\ Powerline\ 10
 set mouse=a
 set tabstop=4
 set softtabstop=4
@@ -21,11 +21,19 @@ set wildmenu
 set wildignore=*.pyc,*.o,*.bak,*.jpg,*.jpeg,*.png,*.gif
 set wildmode=list:full
 
+" Better colors with Solarized
+set t_Co=16
+
+" FileType-specific indents
+au FileType coffee setl sw=2 sts=2 et
+au FileType js setl sw=2 sts=2 et
+
 " Better searching
 set incsearch ignorecase smartcase hlsearch
 
 " Required for vundle
 set nocompatible
+syntax enable
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
@@ -36,7 +44,6 @@ Bundle 'gmarik/vundle'
 
 " Solarized colour scheme
 Bundle 'altercation/vim-colors-solarized.git'
-syntax enable
 if has('colorcolumn')
   " Support for colorcolumn only in vim >= 7.3
   set colorcolumn=80
@@ -52,7 +59,6 @@ Bundle 'pangloss/vim-javascript'
 
 " Git-friendly statusline
 Bundle 'tpope/vim-fugitive'
-" Temporarily commented out while I try out syntastic
 set statusline=%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P\ %{fugitive#statusline()}%<
 set laststatus=2
 
@@ -78,6 +84,18 @@ let g:syntastic_check_on_open=1
 "  "set statusline+=%=%-14.(%l,%c%V%)\ %p%% " Right aligned file nav info
 "endif
 
+Bundle 'kchmck/vim-coffee-script'
+
+Bundle 'scrooloose/nerdtree'
+
+Bundle 'airblade/vim-gitgutter'
+
+Bundle 'bling/vim-airline'
+" Get powerline fonts at https://github.com/Lokaltog/powerline-fonts
+let g:airline_powerline_fonts=1
+
+Bundle 'Valloric/MatchTagAlways'
+
 " vim-scripts repos
 " Bundle 'L9'
 " Bundle 'FuzzyFinder'
@@ -87,6 +105,9 @@ let g:syntastic_check_on_open=1
 
 filetype plugin indent on " required
 
+let g:syntastic_python_checkers=['pyflakes']
+
+" Vundle commands:
 "
 " Brief help
 " :BundleList          - list configured bundles

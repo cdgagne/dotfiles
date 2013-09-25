@@ -31,6 +31,13 @@ au FileType js setl sw=2 sts=2 et
 " Better searching
 set incsearch ignorecase smartcase hlsearch
 
+" ,cd to change to the directory of the current file, and print it
+nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+
+" ctrl-n for NERDTreeToggle
+map <C-n> :NERDTreeToggle<CR>
+
+
 " Required for vundle
 set nocompatible
 syntax enable

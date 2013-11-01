@@ -103,6 +103,8 @@ let g:airline_powerline_fonts=1
 
 Bundle 'Valloric/MatchTagAlways'
 
+Bundle 'ap/vim-css-color'
+
 " vim-scripts repos
 " Bundle 'L9'
 " Bundle 'FuzzyFinder'

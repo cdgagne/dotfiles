@@ -21,12 +21,15 @@ set wildmenu
 set wildignore=*.pyc,*.o,*.bak,*.jpg,*.jpeg,*.png,*.gif
 set wildmode=list:full
 
+set iskeyword-=
+
 " Better colors with Solarized
 set t_Co=16
 
 " FileType-specific indents
 au FileType coffee setl sw=2 sts=2 et
 au FileType js setl sw=2 sts=2 et
+au FileType html setl sw=2 sts=2 et
 
 " Better searching
 set incsearch ignorecase smartcase hlsearch
@@ -75,6 +78,9 @@ Bundle 'scrooloose/syntastic'
 
 let g:syntastic_check_on_open=1
 
+Bundle 'majutsushi/tagbar'
+nmap <F8> :TagbarToggle<CR>
+
 " from https://github.com/spf13/spf13-vim/blob/master/.vimrc
 "if has('statusline')
 "  set laststatus=2
@@ -103,7 +109,21 @@ let g:airline_powerline_fonts=1
 
 Bundle 'Valloric/MatchTagAlways'
 
+" Auto-complete
+"Bundle 'davidhalter/jedi-vim'
+
+" Insert mode tab-completion
+"Bundle 'ervandew/supertab'
+
+" CSS color highlighting
 Bundle 'ap/vim-css-color'
+
+" Session saving
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-session'
+let g:session_autosave = 'no'
+
+Bundle 'othree/html5.vim'
 
 " vim-scripts repos
 " Bundle 'L9'

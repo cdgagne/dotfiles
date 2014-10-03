@@ -63,7 +63,7 @@ endif
 set background=dark
 colorscheme solarized
 
-" Github repos
+" Full path fuzzy file, buffer, mru, tag finder
 Bundle 'kien/ctrlp.vim'
 
 " Better Javascript
@@ -74,6 +74,7 @@ Bundle 'tpope/vim-fugitive'
 set statusline=%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P\ %{fugitive#statusline()}%<
 set laststatus=2
 
+" Async commands
 Bundle 'tpope/vim-dispatch'
 
 " Syntastic
@@ -82,6 +83,7 @@ Bundle 'scrooloose/syntastic'
 
 let g:syntastic_check_on_open=1
 
+" Display tags in a split
 Bundle 'majutsushi/tagbar'
 nmap <F8> :TagbarToggle<CR>
 
@@ -101,16 +103,21 @@ nmap <F8> :TagbarToggle<CR>
 "  "set statusline+=%=%-14.(%l,%c%V%)\ %p%% " Right aligned file nav info
 "endif
 
+" Coffeescript syntax
 Bundle 'kchmck/vim-coffee-script'
 
+" File explorer
 Bundle 'scrooloose/nerdtree'
 
+" Show git diff add/modify/remove in the gutter
 Bundle 'airblade/vim-gitgutter'
 
+" Statusbar
 Bundle 'bling/vim-airline'
 " Get powerline fonts at https://github.com/Lokaltog/powerline-fonts
 let g:airline_powerline_fonts=1
 
+" Better highlight for enclosing xml/html tags
 Bundle 'Valloric/MatchTagAlways'
 
 " Auto-complete
@@ -127,10 +134,13 @@ Bundle 'ap/vim-css-color'
 " Bundle 'xolox/vim-session'
 " let g:session_autosave = 'no'
 
+" HTML5 syntax
 Bundle 'othree/html5.vim'
 
+" Puppet syntax
 Bundle 'rodjek/vim-puppet'
 
+" Rename files within vim
 Bundle 'danro/rename.vim'
 
 " vim-scripts repos

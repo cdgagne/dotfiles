@@ -6,6 +6,13 @@ set softtabstop=4
 set shiftwidth=4
 set smarttab
 
+" Better split opening
+set splitbelow
+set splitright
+
+" Show extra whitespace
+set list listchars=tab:»·,trail:·
+
 set smartindent
 inoremap # X<BS>#
 
@@ -25,11 +32,6 @@ set iskeyword-=
 
 " Better colors with Solarized
 set t_Co=16
-
-" FileType-specific indents
-au FileType coffee setl sw=2 sts=2 et
-au FileType js setl sw=2 sts=2 et
-au FileType html setl sw=2 sts=2 et
 
 " Better searching
 set incsearch ignorecase smartcase hlsearch
@@ -71,6 +73,8 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-fugitive'
 set statusline=%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P\ %{fugitive#statusline()}%<
 set laststatus=2
+
+Bundle 'tpope/vim-dispatch'
 
 " Syntastic
 " Note: Requires pyflakes binary installed in $PATH
@@ -119,11 +123,15 @@ Bundle 'Valloric/MatchTagAlways'
 Bundle 'ap/vim-css-color'
 
 " Session saving
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-session'
-let g:session_autosave = 'no'
+" Bundle 'xolox/vim-misc'
+" Bundle 'xolox/vim-session'
+" let g:session_autosave = 'no'
 
 Bundle 'othree/html5.vim'
+
+Bundle 'rodjek/vim-puppet'
+
+Bundle 'danro/rename.vim'
 
 " vim-scripts repos
 " Bundle 'L9'
@@ -131,10 +139,22 @@ Bundle 'othree/html5.vim'
 "
 " non github repos
 " Bundle 'git://git.wincent.com/command-t.git'
+"
+
+" Django test runner
+Bundle 'JarrodCTaylor/vim-python-test-runner'
+nmap <F10> :DjangoTestFile<CR>
+nmap <F11> :DjangoTestClass<CR>
+nmap <F12> :DjangoTestMethod<CR>
 
 filetype plugin indent on " required
 
 let g:syntastic_python_checkers=['pyflakes']
+
+" FileType-specific indents
+au FileType coffee setl sw=2 sts=2 et
+au FileType js setl sw=2 sts=2 et
+au FileType html setl sw=2 sts=2 et
 
 " Vundle commands:
 "

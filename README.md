@@ -12,10 +12,19 @@ The bestest dotfiles ever.
      $ cd ~ && ln -s dotfiles/vimrc .vimrc
      ```
 
+1. Install Powerline fonts for Liberation Mono for Powerline:
+
+     ```
+     $ git clone https://github.com/powerline/fonts
+     $ (cd fonts && ./install.sh)
+     ```
+
 1. Install Vundle:
 
      ```
      $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
      ```
+     
+1. Go.
      
 1. Run :BundleInstall in vim

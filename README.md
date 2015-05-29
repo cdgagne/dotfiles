@@ -25,6 +25,6 @@ The bestest dotfiles ever.
      $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
      ```
      
-1. Go.
-     
 1. Run :BundleInstall in vim
+
+1. Go.
